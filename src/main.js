@@ -3,6 +3,8 @@ import "./style.css";
 import App from "./App.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import { createI18n } from "vue-i18n";
 import en from "./locales/en.json";
 import ar from "./locales/ar.json";

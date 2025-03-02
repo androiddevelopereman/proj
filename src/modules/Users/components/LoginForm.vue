@@ -35,13 +35,22 @@
           $t("Password")
         }}</label>
         <input
-          type="password"
           class="form-control"
           :type="showPassword ? 'text' : 'password'"
           id="password"
           v-model="password"
           required
         />
+        <i
+          @click="togglePassword"
+          v-if="!showPassword"
+          class="eye bi bi-eye-fill"
+        ></i>
+        <i
+          @click="togglePassword"
+          v-if="showPassword"
+          class="eye bi bi-eye-slash-fill"
+        ></i>
       </div>
       <div class="mb-3 form-check">
         <a href="#" class="forgot-password">{{ $t("Forgot Password?") }}</a>
@@ -65,7 +74,6 @@ const password = ref("");
 const showPassword = ref(false);
 const isRTL = ref(false);
 const router = useRouter(); // استدعاء Vue Router
-
 const togglePassword = () => {
   showPassword.value = !showPassword.value;
 };
@@ -195,5 +203,13 @@ button:hover {
 
 .signup-note a:hover {
   text-decoration: underline;
+}
+
+.eye {
+  position: absolute;
+  bottom: 10.8px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10;
 }
 </style>
